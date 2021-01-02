@@ -36,3 +36,30 @@ This tools use Raspberry Pi's SPI1.
 
 ## Install
 
+### deb
+
+Just download latest release `.deb` package.
+
+And run these commands:
+
+```bash
+sudo systemctl enable pi-temp
+sudo systemctl start pi-temp
+```
+
+### cargo
+
+clone this repo, and run
+
+```bash
+cargo build --release
+```
+
+and run `./target/release/pi-temp` with `sudo`.
+
+or you can install [`cargo-deb`](https://github.com/mmstick/cargo-deb) and build `.deb` package:
+
+```bash
+cargo install cargo-deb
+cargo deb
+```
