@@ -1,0 +1,24 @@
+[package]
+name = "pi-temp"
+version = "0.1.0"
+authors = ["Logiase <logiase.syx@gmail.com>"]
+edition = "2018"
+description = "Show current temperature on a SSD1306 OLED in raspberry pi."
+license = "MIT"
+
+[package.metadata.deb]
+maintainer = "Logiase <logiase.syx@gmial.com>"
+copyright = "2021, Logiase <logiase.syx@gmail.com>"
+assets = [
+    ["target/release/pi-temp", "usr/bin/", "755"]
+]
+maintainer-scripts = "debian/"
+systemd-units = { enable = false }
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rppal = { version = "0.11", features = ["hal"] }
+ssd1306 = "0.5"
+embedded-graphics = "0.6"
+log = "0.4.0"
+env_logger = "0.8.2"

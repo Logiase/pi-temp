@@ -1,0 +1,8 @@
+[Unit]
+Description=Pi temperature
+
+[Service]
+ExecStart=/usr/bin/pi-temp
+
+[Install]
+WantedBy=multi-user.target
